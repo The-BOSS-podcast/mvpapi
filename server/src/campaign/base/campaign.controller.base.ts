@@ -48,6 +48,12 @@ export class CampaignControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        associatedCampaigns: true,
+        associatedSocials: true,
+        camapignBrief: true,
+        campaignCost: true,
+        campaignName: true,
+        content: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -70,6 +76,12 @@ export class CampaignControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        associatedCampaigns: true,
+        associatedSocials: true,
+        camapignBrief: true,
+        campaignCost: true,
+        campaignName: true,
+        content: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -93,6 +105,12 @@ export class CampaignControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        associatedCampaigns: true,
+        associatedSocials: true,
+        camapignBrief: true,
+        campaignCost: true,
+        campaignName: true,
+        content: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -125,6 +143,12 @@ export class CampaignControllerBase {
         where: params,
         data: data,
         select: {
+          associatedCampaigns: true,
+          associatedSocials: true,
+          camapignBrief: true,
+          campaignCost: true,
+          campaignName: true,
+          content: true,
           createdAt: true,
           id: true,
           updatedAt: true,
@@ -156,6 +180,12 @@ export class CampaignControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          associatedCampaigns: true,
+          associatedSocials: true,
+          camapignBrief: true,
+          campaignCost: true,
+          campaignName: true,
+          content: true,
           createdAt: true,
           id: true,
           updatedAt: true,

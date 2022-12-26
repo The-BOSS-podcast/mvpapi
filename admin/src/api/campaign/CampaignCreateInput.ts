@@ -1,1 +1,8 @@
-export type CampaignCreateInput = {};
+export type CampaignCreateInput = {
+  associatedCampaigns?: string | null;
+  associatedSocials?: string | null;
+  camapignBrief?: string | null;
+  campaignCost?: string | null;
+  campaignName?: string | null;
+  content?: string | null;
+};
