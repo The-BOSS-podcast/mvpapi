@@ -23,13 +23,43 @@ model User {
 }
 
 model Podcast {
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  updatedAt DateTime @updatedAt
+  author        String?
+  categories    Json?
+  cost          Int?
+  createdAt     DateTime              @default(now())
+  description   String?
+  episodeCount  Int?
+  explicit      Boolean?
+  feedUrl       String?
+  id            String                @id @default(uuid())
+  imageURL      String?
+  indexId       String?               @unique
+  itunesId      String?
+  language      EnumPodcastLanguage[]
+  lastCrawlTime DateTime?
+  lastParseTime DateTime?
+  owner         String?
+  podcastGuid   String?
+  podcastName   String?
+  publisher     String?
+  updatedAt     DateTime              @updatedAt
+  verified      Boolean?
 }
 
 model Campaign {
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  updatedAt DateTime @updatedAt
+  associatedCampaigns String?
+  associatedSocials   String?
+  camapignBrief       String?
+  campaignCost        String?
+  campaignName        String?
+  content             String?
+  createdAt           DateTime @default(now())
+  id                  String   @id @default(uuid())
+  updatedAt           DateTime @updatedAt
+}
+
+enum EnumPodcastLanguage {
+  English
+  Hindi
+  Telgu
 }

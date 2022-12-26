@@ -19,26 +19,90 @@ import { PodcastService } from "../podcast.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  author: "exampleAuthor",
+  cost: 42,
   createdAt: new Date(),
+  description: "exampleDescription",
+  episodeCount: 42,
+  explicit: "true",
+  feedUrl: "exampleFeedUrl",
   id: "exampleId",
+  imageURL: "exampleImageUrl",
+  indexId: "exampleIndexId",
+  itunesId: "exampleItunesId",
+  lastCrawlTime: new Date(),
+  lastParseTime: new Date(),
+  owner: "exampleOwner",
+  podcastGuid: "examplePodcastGuid",
+  podcastName: "examplePodcastName",
+  publisher: "examplePublisher",
   updatedAt: new Date(),
+  verified: "true",
 };
 const CREATE_RESULT = {
+  author: "exampleAuthor",
+  cost: 42,
   createdAt: new Date(),
+  description: "exampleDescription",
+  episodeCount: 42,
+  explicit: "true",
+  feedUrl: "exampleFeedUrl",
   id: "exampleId",
+  imageURL: "exampleImageUrl",
+  indexId: "exampleIndexId",
+  itunesId: "exampleItunesId",
+  lastCrawlTime: new Date(),
+  lastParseTime: new Date(),
+  owner: "exampleOwner",
+  podcastGuid: "examplePodcastGuid",
+  podcastName: "examplePodcastName",
+  publisher: "examplePublisher",
   updatedAt: new Date(),
+  verified: "true",
 };
 const FIND_MANY_RESULT = [
   {
+    author: "exampleAuthor",
+    cost: 42,
     createdAt: new Date(),
+    description: "exampleDescription",
+    episodeCount: 42,
+    explicit: "true",
+    feedUrl: "exampleFeedUrl",
     id: "exampleId",
+    imageURL: "exampleImageUrl",
+    indexId: "exampleIndexId",
+    itunesId: "exampleItunesId",
+    lastCrawlTime: new Date(),
+    lastParseTime: new Date(),
+    owner: "exampleOwner",
+    podcastGuid: "examplePodcastGuid",
+    podcastName: "examplePodcastName",
+    publisher: "examplePublisher",
     updatedAt: new Date(),
+    verified: "true",
   },
 ];
 const FIND_ONE_RESULT = {
+  author: "exampleAuthor",
+  cost: 42,
   createdAt: new Date(),
+  description: "exampleDescription",
+  episodeCount: 42,
+  explicit: "true",
+  feedUrl: "exampleFeedUrl",
   id: "exampleId",
+  imageURL: "exampleImageUrl",
+  indexId: "exampleIndexId",
+  itunesId: "exampleItunesId",
+  lastCrawlTime: new Date(),
+  lastParseTime: new Date(),
+  owner: "exampleOwner",
+  podcastGuid: "examplePodcastGuid",
+  podcastName: "examplePodcastName",
+  publisher: "examplePublisher",
   updatedAt: new Date(),
+  verified: "true",
 };
 
 const service = {
@@ -124,6 +188,8 @@ describe("Podcast", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        lastCrawlTime: CREATE_RESULT.lastCrawlTime.toISOString(),
+        lastParseTime: CREATE_RESULT.lastParseTime.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -136,6 +202,8 @@ describe("Podcast", () => {
         {
           ...FIND_MANY_RESULT[0],
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
+          lastCrawlTime: FIND_MANY_RESULT[0].lastCrawlTime.toISOString(),
+          lastParseTime: FIND_MANY_RESULT[0].lastParseTime.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
       ]);
@@ -159,6 +227,8 @@ describe("Podcast", () => {
       .expect({
         ...FIND_ONE_RESULT,
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
+        lastCrawlTime: FIND_ONE_RESULT.lastCrawlTime.toISOString(),
+        lastParseTime: FIND_ONE_RESULT.lastParseTime.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -172,6 +242,8 @@ describe("Podcast", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        lastCrawlTime: CREATE_RESULT.lastCrawlTime.toISOString(),
+        lastParseTime: CREATE_RESULT.lastParseTime.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       })
       .then(function () {

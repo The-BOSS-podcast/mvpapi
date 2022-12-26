@@ -18,6 +18,9 @@ import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { isRecordNotFoundError } from "../../prisma.util";
 import { MetaQueryPayload } from "../../util/MetaQueryPayload";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
+import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
+import { CreatePodcastArgs } from "./CreatePodcastArgs";
+import { UpdatePodcastArgs } from "./UpdatePodcastArgs";
 import { DeletePodcastArgs } from "./DeletePodcastArgs";
 import { PodcastFindManyArgs } from "./PodcastFindManyArgs";
 import { PodcastFindUniqueArgs } from "./PodcastFindUniqueArgs";
@@ -79,6 +82,47 @@ export class PodcastResolverBase {
       return null;
     }
     return result;
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Podcast)
+  @nestAccessControl.UseRoles({
+    resource: "Podcast",
+    action: "create",
+    possession: "any",
+  })
+  async createPodcast(
+    @graphql.Args() args: CreatePodcastArgs
+  ): Promise<Podcast> {
+    return await this.service.create({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Podcast)
+  @nestAccessControl.UseRoles({
+    resource: "Podcast",
+    action: "update",
+    possession: "any",
+  })
+  async updatePodcast(
+    @graphql.Args() args: UpdatePodcastArgs
+  ): Promise<Podcast | null> {
+    try {
+      return await this.service.update({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new apollo.ApolloError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => Podcast)

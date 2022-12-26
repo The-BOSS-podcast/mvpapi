@@ -19,23 +19,47 @@ import { CampaignService } from "../campaign.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  associatedCampaigns: "exampleAssociatedCampaigns",
+  associatedSocials: "exampleAssociatedSocials",
+  camapignBrief: "exampleCamapignBrief",
+  campaignCost: "exampleCampaignCost",
+  campaignName: "exampleCampaignName",
+  content: "exampleContent",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  associatedCampaigns: "exampleAssociatedCampaigns",
+  associatedSocials: "exampleAssociatedSocials",
+  camapignBrief: "exampleCamapignBrief",
+  campaignCost: "exampleCampaignCost",
+  campaignName: "exampleCampaignName",
+  content: "exampleContent",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    associatedCampaigns: "exampleAssociatedCampaigns",
+    associatedSocials: "exampleAssociatedSocials",
+    camapignBrief: "exampleCamapignBrief",
+    campaignCost: "exampleCampaignCost",
+    campaignName: "exampleCampaignName",
+    content: "exampleContent",
     createdAt: new Date(),
     id: "exampleId",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  associatedCampaigns: "exampleAssociatedCampaigns",
+  associatedSocials: "exampleAssociatedSocials",
+  camapignBrief: "exampleCamapignBrief",
+  campaignCost: "exampleCampaignCost",
+  campaignName: "exampleCampaignName",
+  content: "exampleContent",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),

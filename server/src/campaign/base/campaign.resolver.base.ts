@@ -18,6 +18,9 @@ import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { isRecordNotFoundError } from "../../prisma.util";
 import { MetaQueryPayload } from "../../util/MetaQueryPayload";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
+import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
+import { CreateCampaignArgs } from "./CreateCampaignArgs";
+import { UpdateCampaignArgs } from "./UpdateCampaignArgs";
 import { DeleteCampaignArgs } from "./DeleteCampaignArgs";
 import { CampaignFindManyArgs } from "./CampaignFindManyArgs";
 import { CampaignFindUniqueArgs } from "./CampaignFindUniqueArgs";
@@ -79,6 +82,47 @@ export class CampaignResolverBase {
       return null;
     }
     return result;
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Campaign)
+  @nestAccessControl.UseRoles({
+    resource: "Campaign",
+    action: "create",
+    possession: "any",
+  })
+  async createCampaign(
+    @graphql.Args() args: CreateCampaignArgs
+  ): Promise<Campaign> {
+    return await this.service.create({
+      ...args,
+      data: args.data,
+    });
+  }
+
+  @common.UseInterceptors(AclValidateRequestInterceptor)
+  @graphql.Mutation(() => Campaign)
+  @nestAccessControl.UseRoles({
+    resource: "Campaign",
+    action: "update",
+    possession: "any",
+  })
+  async updateCampaign(
+    @graphql.Args() args: UpdateCampaignArgs
+  ): Promise<Campaign | null> {
+    try {
+      return await this.service.update({
+        ...args,
+        data: args.data,
+      });
+    } catch (error) {
+      if (isRecordNotFoundError(error)) {
+        throw new apollo.ApolloError(
+          `No resource was found for ${JSON.stringify(args.where)}`
+        );
+      }
+      throw error;
+    }
   }
 
   @graphql.Mutation(() => Campaign)
