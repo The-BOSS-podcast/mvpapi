@@ -1,0 +1,242 @@
+[
+  {
+    "role": "advertizer",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Podcast",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Podcast",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Podcast",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Podcast",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Podcast",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Podcast",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Podcast",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Podcast",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Podcast",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Podcast",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Podcast",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Podcast",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Podcast",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Podcast",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Podcast",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Campaign",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Campaign",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Campaign",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Campaign",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Campaign",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Campaign",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Campaign",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Campaign",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Campaign",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Campaign",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Campaign",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Campaign",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "advertizer",
+    "resource": "Campaign",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "creator",
+    "resource": "Campaign",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agency",
+    "resource": "Campaign",
+    "action": "read:any",
+    "attributes": "*"
+  }
+]
